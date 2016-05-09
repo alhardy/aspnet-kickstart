@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TemplateReport>
+  <ItemTemplates>
+    <ItemTemplate Path="ItemTemplates\AspNetKickStart\Metrics\Definitions\CSharp.vstemplate" Name="Health Check Class" Description="Long description here" ProjectType="CSharp" ProjectSubType="" />
+  </ItemTemplates>
+  <ProjectTemplates>
+    <ProjectTemplate Path="..\AspNet.KickStart.ApiHost\_Definitions\_project.vstemplate.xml" Name="ASP.NET KickStart API Host" Description="TODO" ProjectType="CSharp" ProjectSubType="Web" />
+    <ProjectTemplate Path="..\AspNet.KickStart.Api\_Definitions\_project.vstemplate.xml" Name="ASP.NET KickStart API Implementation" Description="TODO" ProjectType="CSharp" ProjectSubType="Web" />
+  </ProjectTemplates>
+  <Snippets />
+</TemplateReport>

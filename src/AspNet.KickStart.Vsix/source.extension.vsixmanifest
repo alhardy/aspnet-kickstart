@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="AspNet.KickStart.Vsix.F9BA239C-2420-4167-A986-3C11670DB3E0" Version="1.0.0" Language="en-US" Publisher="Allan Hardy" />
+    <DisplayName>AspNet.KickStart.Vsix</DisplayName>
+    <Description xml:space="preserve">An ASP.NET kick starter template. Adding metrics logging, swagger documentation, security etc.....</Description>
+    <MoreInfo>https://github.com/alhardy/aspnet-kickstart</MoreInfo>
+    <License>Resources/LICENSE</License>
+    <GettingStartedGuide>https://github.com/alhardy/aspnet-kickstart</GettingStartedGuide>
+    <ReleaseNotes>https://github.com/alhardy/aspnet-kickstart/CHANGELOG.md</ReleaseNotes>
+    <Tags>ASP.NET;Template;Api;Swagger;Swashbuckle;Kick Start;MVC;Web Api;Identity Server;Metrics.NET;ASP.NET Metrics;Metrics;NWebSec</Tags>
+  </Metadata>
+  <Installation AllUsers="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="14.0" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="Output\ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" Path="Output\ProjectTemplates" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="TemplateBuilder.dll" AssemblyName="TemplateBuilder, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="NuGet.Core.dll" AssemblyName="NuGet.Core, Version=2.11.1.812, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="AspNet.KickStart.VsixWizards" Path="|AspNet.KickStart.VsixWizards|" AssemblyName="|AspNet.KickStart.VsixWizards;AssemblyName|" />
+    <Asset Type="Metrics.NET.0.3.5.nupkg" d:Source="File" Path="Packages\Metrics.NET.0.3.5.nupkg" d:VsixSubPath="Packages" />  
+</Assets>
+</PackageManifest>

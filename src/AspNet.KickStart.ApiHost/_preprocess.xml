@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Preprocess>
+  <!--
+  You can specify the path where this should show up in the
+  Add New Project / Add New Item dialog by setting the value below
+  -->
+  <TemplateInfo Path="CSharp\Web"/>
+  <Replacements Include="*.*" Exclude="ReadMe.html;*.vstemplate;*.csproj;*.fsproj;*.vbproj;*.jpg;*.png;*.ico;_preprocess.xml;_project.vstemplate.xml">
+    <add key="KickStartHost" value="$safeprojectname$"/>
+    <!-- Replace the ProjectGuid (Unique ID for the project) with a generated GUID. Replace this with your own. -->
+    <add key="68CC6706-9CDC-41C6-BC8F-E394328F28D5" value="$guid1$"/>
+    <!-- Replace the GUID in userSecretsId in the project.json file with a generated GUID. Replace this with your own if you are using userSecretsId. -->
+    <add key="FB59FB4A-6BA7-403B-ACC9-0C0E358B198E" value="$guid2$"/>
+  </Replacements>
+</Preprocess>
