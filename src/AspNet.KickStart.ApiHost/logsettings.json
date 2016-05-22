@@ -2,9 +2,9 @@
   "Logging": {
     "IncludeScopes": false,
     "LogLevel": {
-      "Default": "Verbose",
-      "System": "Verbose",
-      "Microsoft": "Verbose"
+      "Default": "Debug",
+      "System": "Debug",
+      "Microsoft": "Debug"
     }
   }
 }

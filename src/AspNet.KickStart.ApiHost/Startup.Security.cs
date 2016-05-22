@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 
 namespace AspNet.KickStart.ApiHost
 {
     // ReSharper disable MissingXmlDoc
     public static class SecurityExtensions
-    // ReSharper restore MissingXmlDoc
+        // ReSharper restore MissingXmlDoc
     {
         public static IApplicationBuilder ConfigureSecurity(this IApplicationBuilder app)
         {
@@ -19,11 +19,11 @@ namespace AspNet.KickStart.ApiHost
             });
 
             //app.UseHsts(options => options.MaxAge().AllResponses().UpgradeInsecureRequests().IncludeSubdomains());
-            app.UseXContentTypeOptions();
-            app.UseXDownloadOptions();
-            app.UseXfo(options => options.SameOrigin());
-            app.UseXRobotsTag(options => options.NoIndex().NoFollow());
-            app.UseXXssProtection(options => options.EnabledWithBlockMode());
+            //app.UseXContentTypeOptions();
+            //app.UseXDownloadOptions();
+            //app.UseXfo(options => options.SameOrigin());
+            //app.UseXRobotsTag(options => options.NoIndex().NoFollow());
+            //app.UseXXssProtection(options => options.EnabledWithBlockMode());
 
             return app;
         }

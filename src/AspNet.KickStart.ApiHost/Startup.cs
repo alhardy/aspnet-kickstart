@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -17,13 +18,9 @@ namespace AspNet.KickStart.ApiHost
 
         public IConfigurationRoot Configuration { get; set; }
 
-        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
-
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             env.ConfigureLogger(loggerFactory);
-
-            app.UseIISPlatformHandler();
 
             if (env.IsDevelopment())
             {
@@ -34,9 +31,8 @@ namespace AspNet.KickStart.ApiHost
             app.UseMvcWithMetrics();
             app.UseOAuth2();
 
-            app.UseStaticFiles();
-            app.UseSwaggerGen();
-            app.UseSwaggerUi();
+            //app.UseSwaggerGen();
+            //app.UseSwaggerUi();
         }
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -44,8 +40,7 @@ namespace AspNet.KickStart.ApiHost
             services
                 .AddLogging()
                 .AddRouting(options => { options.LowercaseUrls = true; })
-                .AddSwagger()
-                .AddCaching();
+                .AddSwagger();
 
             services
                 .AddMvc()

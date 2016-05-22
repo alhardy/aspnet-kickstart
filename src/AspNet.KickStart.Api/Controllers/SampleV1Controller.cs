@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspNet.KickStart.Api.Controllers
 {
     [Route("v1/sample")]
     public class SampleV1Controller : Controller
     {
-
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)

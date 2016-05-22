@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
@@ -6,7 +6,7 @@ namespace AspNet.KickStart.ApiHost
 {
     // ReSharper disable MissingXmlDoc
     public static class EnvConfigurationExtensions
-    // ReSharper restore MissingXmlDoc
+        // ReSharper restore MissingXmlDoc
     {
         public static IConfigurationRoot BuildConfiguration(this IHostingEnvironment env)
         {
@@ -21,7 +21,6 @@ namespace AspNet.KickStart.ApiHost
         public static IHostingEnvironment ConfigureLogger(this IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             var logConfig = new ConfigurationBuilder().AddJsonFile("logsettings.json").Build();
-            logConfig.ReloadOnChanged("logsettings.json");
             loggerFactory.AddConsole(logConfig);
 
             return env;

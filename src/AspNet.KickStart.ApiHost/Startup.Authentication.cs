@@ -1,6 +1,4 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using IdentityServer4.AccessTokenValidation;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 
 namespace AspNet.KickStart.ApiHost
 {
@@ -10,16 +8,16 @@ namespace AspNet.KickStart.ApiHost
     {
         public static IApplicationBuilder UseOAuth2(this IApplicationBuilder app)
         {
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
-            app.UseIdentityServerAuthentication(options =>
-            {
-                options.Authority = "https://auth";
-                options.AutomaticAuthenticate = true;
-                options.AutomaticChallenge = true;
-                options.SupportedTokens = SupportedTokens.Both;
-                options.ScopeName = "seems to be required when reference tokens are allowed";
-            });
+            //app.UseIdentityServerAuthentication(options =>
+            //{
+            //    options.Authority = "https://auth";
+            //    options.AutomaticAuthenticate = true;
+            //    options.AutomaticChallenge = true;
+            //    options.SupportedTokens = SupportedTokens.Both;
+            //    options.ScopeName = "seems to be required when reference tokens are allowed";
+            //});
 
             return app;
         }

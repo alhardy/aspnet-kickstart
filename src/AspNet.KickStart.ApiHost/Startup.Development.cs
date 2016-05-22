@@ -1,4 +1,5 @@
 using Microsoft.AspNet.Builder;
+using Microsoft.AspNetCore.Builder;
 
 namespace AspNet.KickStart.ApiHost
 {
@@ -8,8 +9,8 @@ namespace AspNet.KickStart.ApiHost
     {
         public static IApplicationBuilder ConfigureForDevelopment(this IApplicationBuilder app)
         {
-            app.UseDeveloperExceptionPage();
-            app.UseRuntimeInfoPage("/info");
+            //app.UseDeveloperExceptionPage();
+            //app.UseRuntimeInfoPage("/info");
 
             return app;
         }
