@@ -6,21 +6,26 @@ namespace AspNet.KickStart.ApiHost
 {
     // ReSharper disable MissingXmlDoc
     public static class EnvConfigurationExtensions
-        // ReSharper restore MissingXmlDoc
+    // ReSharper restore MissingXmlDoc
     {
         public static IConfigurationRoot BuildConfiguration(this IHostingEnvironment env)
         {
+
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
+               .SetBasePath(env.ContentRootPath)
+               .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+               .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
 
             return builder.Build();
         }
 
         public static IHostingEnvironment ConfigureLogger(this IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            var logConfig = new ConfigurationBuilder().AddJsonFile("logsettings.json").Build();
+            var logConfig = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("logsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                .Build();
             loggerFactory.AddConsole(logConfig);
 
             return env;

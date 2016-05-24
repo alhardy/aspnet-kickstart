@@ -3,15 +3,6 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "Metrics.Net/0.3.5": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Metrics.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Metrics.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Antiforgery/1.0.0-rc2-final": {
         "type": "package",
         "dependencies": {
@@ -1543,18 +1534,6 @@
     }
   },
   "libraries": {
-    "Metrics.Net/0.3.5": {
-      "sha512": "r8c2iuNbVbVAkCX/2RR6owkwAr3gVnff1LukwAU/rpCDALgIo10V5QDb7CY5x+lLqKc+w/I0IP5d0h6XqRPJPQ==",
-      "type": "package",
-      "files": [
-        "Metrics.NET.0.3.5.nupkg",
-        "Metrics.NET.0.3.5.nupkg.sha512",
-        "Metrics.NET.nuspec",
-        "lib/net45/Metrics.XML",
-        "lib/net45/Metrics.dll",
-        "lib/net45/Metrics.pdb"
-      ]
-    },
     "Microsoft.AspNetCore.Antiforgery/1.0.0-rc2-final": {
       "sha512": "dvmfV1ExR2oqTt9rxhaRrutFBfta7fXY4o5nA8OU0f8CYzdZ7vyw7hyebAEE1p9SFXH5Km8/WFWkZ8uu3GNGPg==",
       "type": "package",
@@ -4944,7 +4923,6 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Metrics.Net >= 0.3.5",
       "Microsoft.AspNetCore.Mvc >= 1.0.0-rc2-final",
       "Microsoft.Extensions.Configuration.Json >= 1.0.0-rc2-final"
     ],

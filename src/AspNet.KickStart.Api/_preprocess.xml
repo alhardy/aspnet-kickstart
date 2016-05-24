@@ -6,7 +6,7 @@
   -->
   <TemplateInfo Path="CSharp\Web"/>
   <Replacements Include="*.*" Exclude="ReadMe.html;*.vstemplate;*.csproj;*.fsproj;*.vbproj;*.jpg;*.png;*.ico;_preprocess.xml;_project.vstemplate.xml">
-    <add key="KickStartApi" value="$safeprojectname$"/>
+    <add key="AspNet.KickStart.Api" value="$safeprojectname$"/>
     <!-- Replace the ProjectGuid (Unique ID for the project) with a generated GUID. Replace this with your own. -->
     <add key="5D96D524-99F5-4990-B4CB-CF2EA89477A2" value="$guid1$"/>
     <!-- Replace the GUID in userSecretsId in the project.json file with a generated GUID. Replace this with your own if you are using userSecretsId. -->

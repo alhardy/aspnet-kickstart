@@ -1,23 +1,31 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.IdentityModel.Tokens;
 
 namespace AspNet.KickStart.ApiHost
 {
     // ReSharper disable MissingXmlDoc
     public static class AuthenticationExtensions
-        // ReSharper restore MissingXmlDoc
+    // ReSharper restore MissingXmlDoc
     {
-        public static IApplicationBuilder UseOAuth2(this IApplicationBuilder app)
+        public static IApplicationBuilder AddAuthz(this IApplicationBuilder app)
         {
-            //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
-            //app.UseIdentityServerAuthentication(options =>
-            //{
-            //    options.Authority = "https://auth";
-            //    options.AutomaticAuthenticate = true;
-            //    options.AutomaticChallenge = true;
-            //    options.SupportedTokens = SupportedTokens.Both;
-            //    options.ScopeName = "seems to be required when reference tokens are allowed";
-            //});
+            app.UseJwtBearerAuthentication(new JwtBearerOptions
+            {
+                Authority = "https://localhost:1234",
+                Audience = "https://localhost:1234/resources",
+
+                RequireHttpsMetadata = true,
+                AutomaticAuthenticate = true,
+
+                TokenValidationParameters = new TokenValidationParameters
+                {
+                    NameClaimType = "name",
+                    RoleClaimType = "role"
+                }
+            });
 
             return app;
         }

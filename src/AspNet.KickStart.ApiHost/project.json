@@ -1,14 +1,13 @@
 {
   "version": "1.0.0-*",
   "description": "api-boot host project",
-  "authors": ["Allan Hardy"],
+  "authors": [ "Allan Hardy" ],
   "compilationOptions": {
     "emitEntryPoint": true
   },
 
   "dependencies": {
-    "AspNet.KickStart.Api": "1.0.0-*",
-    "AspNet.Metrics": "1.0.0-beta-*",
+    "AspNet.Metrics": "1.0.0-beta-build00014",
     "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
@@ -17,7 +16,10 @@
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc2-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-final"
+    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Authentication.JwtBearer": "1.0.0-rc2-final",
+    "NWebsec.AspNetCore.Middleware": "1.0.0-gamma-5" 
   },
 
   "tools": {
@@ -36,11 +38,16 @@
     "preserveCompilationContext": true
   },
 
+  "runtimeOptions": {
+    "gcServer": true
+  },
+
   "publishOptions": {
     "include": [
       "wwwroot",
       "Views",
       "appsettings.json",
+      "logsettings.json",
       "web.config"
     ]
   },

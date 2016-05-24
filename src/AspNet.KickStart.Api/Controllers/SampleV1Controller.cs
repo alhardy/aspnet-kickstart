@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AspNet.KickStart.Api.Controllers
 {
     [Route("v1/sample")]
+    [Produces("application/json")]
     public class SampleV1Controller : Controller
     {
         // DELETE api/values/5

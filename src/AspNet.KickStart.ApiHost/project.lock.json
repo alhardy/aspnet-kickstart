@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
-      "AspNet.Metrics/1.0.0-beta-1": {
+      "AspNet.Metrics/1.0.0-beta-build00014": {
         "type": "package",
         "dependencies": {
           "Metrics.NET": "0.3.5",
@@ -51,15 +51,6 @@
           }
         }
       },
-      "Metrics.Net/0.3.5": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Metrics.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Metrics.dll": {}
-        }
-      },
       "Metrics.NET/0.3.5": {
         "type": "package",
         "compile": {
@@ -82,6 +73,39 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNetCore.Antiforgery.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication/1.0.0-rc2-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.DataProtection": "1.0.0-rc2-final",
+          "Microsoft.AspNetCore.Http": "1.0.0-rc2-final",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Options": "1.0.0-rc2-final",
+          "Microsoft.Extensions.WebEncoders": "1.0.0-rc2-final"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNetCore.Authentication.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNetCore.Authentication.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/1.0.0-rc2-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication": "1.0.0-rc2-final",
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "2.0.0-rc2-305061149"
+        },
+        "compile": {
+          "lib/net451/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization/1.0.0-rc2-final": {
@@ -1085,6 +1109,58 @@
           "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll": {}
         }
       },
+      "Microsoft.IdentityModel.Logging/1.0.0-rc2-305061149": {
+        "type": "package",
+        "compile": {
+          "lib/net451/Microsoft.IdentityModel.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.IdentityModel.Logging.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/2.0.0-rc2-305061149": {
+        "type": "package",
+        "dependencies": {
+          "System.IdentityModel.Tokens.Jwt": "5.0.0-rc2-305061149"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.IdentityModel.Protocols.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.IdentityModel.Protocols.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/2.0.0-rc2-305061149": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "2.0.0-rc2-305061149"
+        },
+        "compile": {
+          "lib/net451/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Tokens/5.0.0-rc2-305061149": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "1.0.0-rc2-305061149",
+          "Newtonsoft.Json": "8.0.3"
+        },
+        "frameworkAssemblies": [
+          "System.Xml"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.IdentityModel.Tokens.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.IdentityModel.Tokens.dll": {}
+        }
+      },
       "Microsoft.Net.Http.Headers/1.0.0-rc2-final": {
         "type": "package",
         "dependencies": {
@@ -1181,6 +1257,33 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NWebsec.AspNetCore.Core/1.0.0-gamma-5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "1.0.0-rc2-final",
+          "NETStandard.Library": "1.5.0-rc2-24027"
+        },
+        "compile": {
+          "lib/net451/NWebsec.AspNetCore.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net451/NWebsec.AspNetCore.Core.dll": {}
+        }
+      },
+      "NWebsec.AspNetCore.Middleware/1.0.0-gamma-5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "1.0.0-rc2-final",
+          "NETStandard.Library": "1.5.0-rc2-24027",
+          "NWebsec.AspNetCore.Core": "1.0.0-gamma-5"
+        },
+        "compile": {
+          "lib/net451/NWebsec.AspNetCore.Middleware.dll": {}
+        },
+        "runtime": {
+          "lib/net451/NWebsec.AspNetCore.Middleware.dll": {}
         }
       },
       "runtime.native.System/4.0.0-rc2-24027": {
@@ -1401,6 +1504,18 @@
         },
         "runtime": {
           "lib/net46/System.Globalization.Calendars.dll": {}
+        }
+      },
+      "System.IdentityModel.Tokens.Jwt/5.0.0-rc2-305061149": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.0.0-rc2-305061149"
+        },
+        "compile": {
+          "lib/net451/System.IdentityModel.Tokens.Jwt.dll": {}
+        },
+        "runtime": {
+          "lib/net451/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
       "System.IO/4.1.0-rc2-24027": {
@@ -1952,30 +2067,15 @@
         "runtime": {
           "lib/net46/System.Xml.XPath.XDocument.dll": {}
         }
-      },
-      "AspNet.KickStart.Api/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.1",
-        "dependencies": {
-          "Metrics.Net": "0.3.5",
-          "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final",
-          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final"
-        },
-        "compile": {
-          "net461/AspNet.KickStart.Api.dll": {}
-        },
-        "runtime": {
-          "net461/AspNet.KickStart.Api.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "AspNet.Metrics/1.0.0-beta-1": {
-      "sha512": "oKoC9uMWxRBpTmAjoeHvwgtYvjSaqbv286IlT7D9HEQByjsfI7fzUUNq9E/xBMIWjxs6xTWzZNrzHRdyB/zoCQ==",
+    "AspNet.Metrics/1.0.0-beta-build00014": {
+      "sha512": "eafQlwi4EUI0E5rhGkMSUfBLH+vjD+lNO18EdWDLV1EV8bX5YxWwDiU6s06UaGseLJUHOLVwwcQPhWYO5ekm3Q==",
       "type": "package",
       "files": [
-        "AspNet.Metrics.1.0.0-beta-1.nupkg.sha512",
+        "AspNet.Metrics.1.0.0-beta-build00014.nupkg.sha512",
         "AspNet.Metrics.nuspec",
         "lib/net461/AspNet.Metrics.dll",
         "lib/net461/AspNet.Metrics.xml"
@@ -1995,17 +2095,6 @@
         "runtimes/win7-x64/native/libuv.dll",
         "runtimes/win7-x86/native/libuv.dll",
         "thirdpartynotices.txt"
-      ]
-    },
-    "Metrics.Net/0.3.5": {
-      "sha512": "r8c2iuNbVbVAkCX/2RR6owkwAr3gVnff1LukwAU/rpCDALgIo10V5QDb7CY5x+lLqKc+w/I0IP5d0h6XqRPJPQ==",
-      "type": "package",
-      "files": [
-        "Metrics.NET.0.3.5.nupkg.sha512",
-        "Metrics.NET.nuspec",
-        "lib/net45/Metrics.XML",
-        "lib/net45/Metrics.dll",
-        "lib/net45/Metrics.pdb"
       ]
     },
     "Metrics.NET/0.3.5": {
@@ -2030,6 +2119,30 @@
         "lib/net451/Microsoft.AspNetCore.Antiforgery.xml",
         "lib/netstandard1.3/Microsoft.AspNetCore.Antiforgery.dll",
         "lib/netstandard1.3/Microsoft.AspNetCore.Antiforgery.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication/1.0.0-rc2-final": {
+      "sha512": "JdSX+PWZs7sUWL73QeqkSRmZMIY9h6CHEH7KVAUR9sT83W2thWCU5vWTxTMbwVuUP7qaOlhpXfNR4vniWDa5oA==",
+      "type": "package",
+      "files": [
+        "Microsoft.AspNetCore.Authentication.1.0.0-rc2-final.nupkg.sha512",
+        "Microsoft.AspNetCore.Authentication.nuspec",
+        "lib/net451/Microsoft.AspNetCore.Authentication.dll",
+        "lib/net451/Microsoft.AspNetCore.Authentication.xml",
+        "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.dll",
+        "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/1.0.0-rc2-final": {
+      "sha512": "phzzhNNPx76j8dtxBy2DHtl2sxnRE4zTmwcKlT9bLAooi02CqY+iV56CrrvzeyUTjEbDiTeKfJYfxuP3kfGevA==",
+      "type": "package",
+      "files": [
+        "Microsoft.AspNetCore.Authentication.JwtBearer.1.0.0-rc2-final.nupkg.sha512",
+        "Microsoft.AspNetCore.Authentication.JwtBearer.nuspec",
+        "lib/net451/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net451/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "lib/netstandard1.4/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/netstandard1.4/Microsoft.AspNetCore.Authentication.JwtBearer.xml"
       ]
     },
     "Microsoft.AspNetCore.Authorization/1.0.0-rc2-final": {
@@ -2935,6 +3048,46 @@
         "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.xml"
       ]
     },
+    "Microsoft.IdentityModel.Logging/1.0.0-rc2-305061149": {
+      "sha512": "SmXdU8pZd6FqB2dyPZdABVXVW/g/AqE2dcKOpVW2/ILHnwRdXXkux8s0lnpPYtJPsuY3K/by6fGTBHKsB9lt9w==",
+      "type": "package",
+      "files": [
+        "Microsoft.IdentityModel.Logging.1.0.0-rc2-305061149.nupkg.sha512",
+        "Microsoft.IdentityModel.Logging.nuspec",
+        "lib/net451/Microsoft.IdentityModel.Logging.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll"
+      ]
+    },
+    "Microsoft.IdentityModel.Protocols/2.0.0-rc2-305061149": {
+      "sha512": "0JBLXTBiWSzBN5OkQ6UL11yF0o1xWxf4cqvLEQshpNXRGsBYjnkc7JzD4oXAHnW1wDgmZTPGSOGBcQQdPuMLvw==",
+      "type": "package",
+      "files": [
+        "Microsoft.IdentityModel.Protocols.2.0.0-rc2-305061149.nupkg.sha512",
+        "Microsoft.IdentityModel.Protocols.nuspec",
+        "lib/net451/Microsoft.IdentityModel.Protocols.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.dll"
+      ]
+    },
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/2.0.0-rc2-305061149": {
+      "sha512": "bX6gdYIHM5P+IPV1KY9lLNS4qf/BmcIv8koPRWYkzFw3b/AF7EJ2ahEuYbNUGmJGUqz4Vs0YHBEbQIt169RYPg==",
+      "type": "package",
+      "files": [
+        "Microsoft.IdentityModel.Protocols.OpenIdConnect.2.0.0-rc2-305061149.nupkg.sha512",
+        "Microsoft.IdentityModel.Protocols.OpenIdConnect.nuspec",
+        "lib/net451/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
+      ]
+    },
+    "Microsoft.IdentityModel.Tokens/5.0.0-rc2-305061149": {
+      "sha512": "IaBBTV2Zg+vWkTWfb2AXShWmAMZsuzi9QwB7t/7wrFDGpN9TMoTWdRm1BK0NZT5s4VQ3hRkEY4I/5rFsaHz/Jw==",
+      "type": "package",
+      "files": [
+        "Microsoft.IdentityModel.Tokens.5.0.0-rc2-305061149.nupkg.sha512",
+        "Microsoft.IdentityModel.Tokens.nuspec",
+        "lib/net451/Microsoft.IdentityModel.Tokens.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll"
+      ]
+    },
     "Microsoft.Net.Http.Headers/1.0.0-rc2-final": {
       "sha512": "80kfOb0U8FKsKxv0fHtJFhcAWeYIvTAz4NCrKi84n5XXzMPNV7DLdy6d0g2f7UCj0iOtNGE5cGvAFiWqqZFeEA==",
       "type": "package",
@@ -3043,6 +3196,30 @@
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
         "tools/install.ps1"
+      ]
+    },
+    "NWebsec.AspNetCore.Core/1.0.0-gamma-5": {
+      "sha512": "dvO8x/t3qBpK78l2jgPNI7ao/XCNoCHoqiiylnWinrPKOD3G7C+DrkrO7DsGYu/2SAk4wDWYDrvVENHNY9fV8Q==",
+      "type": "package",
+      "files": [
+        "NWebsec.AspNetCore.Core.1.0.0-gamma-5.nupkg.sha512",
+        "NWebsec.AspNetCore.Core.nuspec",
+        "lib/net451/NWebsec.AspNetCore.Core.dll",
+        "lib/net451/NWebsec.AspNetCore.Core.xml",
+        "lib/netstandard1.5/NWebsec.AspNetCore.Core.dll",
+        "lib/netstandard1.5/NWebsec.AspNetCore.Core.xml"
+      ]
+    },
+    "NWebsec.AspNetCore.Middleware/1.0.0-gamma-5": {
+      "sha512": "GfNYo9qXVTB/7i+w/Eg9VLih57ZQgNxf/D/CDZKjSIbqne6+dZNjF8G+HUTwJHpdA1Wu+MzOIuiMDTNeRsPxxg==",
+      "type": "package",
+      "files": [
+        "NWebsec.AspNetCore.Middleware.1.0.0-gamma-5.nupkg.sha512",
+        "NWebsec.AspNetCore.Middleware.nuspec",
+        "lib/net451/NWebsec.AspNetCore.Middleware.dll",
+        "lib/net451/NWebsec.AspNetCore.Middleware.xml",
+        "lib/netstandard1.5/NWebsec.AspNetCore.Middleware.dll",
+        "lib/netstandard1.5/NWebsec.AspNetCore.Middleware.xml"
       ]
     },
     "runtime.native.System/4.0.0-rc2-24027": {
@@ -3975,6 +4152,16 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.IdentityModel.Tokens.Jwt/5.0.0-rc2-305061149": {
+      "sha512": "fEuQocKfmdwYd6nfCZKSK6BHx3we4F8VmRj5BgJB77j+KZ2TreQhvbDgoJuO+ZNrs+Tcm2BeIJWN69DW3isY7Q==",
+      "type": "package",
+      "files": [
+        "System.IdentityModel.Tokens.Jwt.5.0.0-rc2-305061149.nupkg.sha512",
+        "System.IdentityModel.Tokens.Jwt.nuspec",
+        "lib/net451/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll"
       ]
     },
     "System.IO/4.1.0-rc2-24027": {
@@ -6248,18 +6435,14 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
-    },
-    "AspNet.KickStart.Api/1.0.0": {
-      "type": "project",
-      "path": "../AspNet.KickStart.Api/project.json",
-      "msbuildProject": "../AspNet.KickStart.Api/AspNet.KickStart.Api.xproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "AspNet.KickStart.Api >= 1.0.0-*",
-      "AspNet.Metrics >= 1.0.0-beta-*",
+      "AspNet.Metrics >= 1.0.0-beta-build00014",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 1.0.0-rc2-final",
       "Microsoft.AspNetCore.Mvc >= 1.0.0-rc2-final",
+      "Microsoft.AspNetCore.Mvc.Formatters.Json >= 1.0.0-rc2-final",
       "Microsoft.AspNetCore.Server.IISIntegration >= 1.0.0-rc2-final",
       "Microsoft.AspNetCore.Server.Kestrel >= 1.0.0-rc2-final",
       "Microsoft.Extensions.Configuration.EnvironmentVariables >= 1.0.0-rc2-final",
@@ -6267,7 +6450,8 @@
       "Microsoft.Extensions.Configuration.Json >= 1.0.0-rc2-final",
       "Microsoft.Extensions.Logging >= 1.0.0-rc2-final",
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc2-final",
-      "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc2-final"
+      "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc2-final",
+      "NWebsec.AspNetCore.Middleware >= 1.0.0-gamma-5"
     ],
     ".NETFramework,Version=v4.6.1": []
   },

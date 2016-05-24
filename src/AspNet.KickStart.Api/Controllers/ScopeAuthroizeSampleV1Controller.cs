@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNet.KickStart.Api.Controllers
 {
-    [Route("v1/scopeauth"), Authorize]
+    [Route("v1/scopeauth"), Authorize(Policy = "SamplePolicy")]
     public class ScopeAuthroizeSampleV1Controller : Controller
     {
         [HttpGet]
