@@ -18,8 +18,8 @@ namespace AspNet.KickStart.ApiHost
 
         public IConfigurationRoot Configuration { get; set; }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,
-            ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             env.ConfigureLogger(loggerFactory);
 
@@ -39,9 +39,13 @@ namespace AspNet.KickStart.ApiHost
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services
+                .AddOptions()
                 .AddLogging()
                 .AddRouting(options => { options.LowercaseUrls = true; })
                 .AddSwagger();
+
+            services.Configure<AuthSettings>(options => 
+                Configuration.GetSection(nameof(AuthSettings)).Bind(options));
 
             services.AddMvcCore()
                 .AddJsonFormatters()

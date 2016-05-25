@@ -51,6 +51,7 @@ _ReSharper*/
 
 #Test files
 *.testsettings
+*.Development.json
 
 #Build
 out

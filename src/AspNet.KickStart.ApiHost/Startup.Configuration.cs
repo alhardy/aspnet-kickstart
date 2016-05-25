@@ -12,9 +12,15 @@ namespace AspNet.KickStart.ApiHost
         {
 
             var builder = new ConfigurationBuilder()
-               .SetBasePath(env.ContentRootPath)
+               .SetBasePath(env.WebRootPath)
                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets();
+            }
+
 
             return builder.Build();
         }
@@ -22,7 +28,7 @@ namespace AspNet.KickStart.ApiHost
         public static IHostingEnvironment ConfigureLogger(this IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             var logConfig = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
+                .SetBasePath(env.WebRootPath)
                 .AddJsonFile("logsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
                 .Build();
