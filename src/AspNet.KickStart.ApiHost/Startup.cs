@@ -29,7 +29,7 @@ namespace AspNet.KickStart.ApiHost
             }
 
             app.ConfigureSecurity();
-            //app.AddAuthz();
+            app.AddAuthz();
             app.UseMetrics();
             app.UseMvc();
             app.UseSwaggerDefaults();
@@ -41,17 +41,23 @@ namespace AspNet.KickStart.ApiHost
                 .AddOptions()
                 .AddLogging()
                 .AddRouting(options => { options.LowercaseUrls = true; })
-                .AddSwagger();
+                .AddSwaggerServices();
 
             services.Configure<AuthSettings>(options =>
                 Configuration.GetSection(nameof(AuthSettings)).Bind(options));
 
             services.AddMvcCore()
                 .AddJsonFormatters()
-                .AddAuthorization(options => { options.AddPolicy("SamplePolicy", policy => { policy.RequireClaim("scope", "read"); }); });
+                .AddAuthorization(options =>
+                {
+                    options.AddPolicy("SamplePolicy", policy => { policy.RequireClaim("scope", "read"); });
+                });
 
             services
-                .AddMvc(options => { options.Filters.Add(new MetricsResourceFilter(new DefaultRouteTemplateResolver())); })
+                .AddMvc(options =>
+                {
+                    options.Filters.Add(new MetricsResourceFilter(new DefaultRouteTemplateResolver()));
+                })
                 .AddDefaultJsonOptions();
 
 
@@ -63,8 +69,6 @@ namespace AspNet.KickStart.ApiHost
                 })
                 .AddAllPerforrmanceCounters()
                 .AddHealthChecks();
-
-            services.AddSwagger();
         }
     }
 }

@@ -8,16 +8,6 @@ namespace Microsoft.AspNetCore.Builder
     {
         public static IApplicationBuilder ConfigureSecurity(this IApplicationBuilder app)
         {
-            app.Use(next =>
-            {
-                return ctx =>
-                {
-                    //TODO: Can't seem to remove x-powered-by header here
-                    ctx.Response.Headers.Remove("Server");
-                    return next(ctx);
-                };
-            });
-
             app.UseHsts(options => options.MaxAge().AllResponses()
                 .UpgradeInsecureRequests().IncludeSubdomains());
             app.UseXContentTypeOptions();
