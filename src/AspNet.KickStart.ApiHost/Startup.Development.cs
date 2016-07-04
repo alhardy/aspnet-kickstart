@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Logging;
+
 // ReSharper disable MissingXmlDoc
 namespace Microsoft.AspNetCore.Builder
 // ReSharper restore MissingXmlDoc
@@ -5,10 +7,12 @@ namespace Microsoft.AspNetCore.Builder
 {
     public static class DevelopmentExtensions
     {
-        public static IApplicationBuilder ConfigureForDevelopment(this IApplicationBuilder app)
+        public static IApplicationBuilder ConfigureForDevelopment(this IApplicationBuilder app,
+            ILoggerFactory loggerFactory)
         {
             app.UseDeveloperExceptionPage();
-            app.UseRuntimeInfoPage("/info");
+
+            loggerFactory.AddDebug();
 
             return app;
         }

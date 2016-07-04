@@ -10,11 +10,11 @@ namespace AspNet.KickStart.ApiHost
     {
         public static IConfigurationRoot BuildConfiguration(this IHostingEnvironment env)
         {
-
             var builder = new ConfigurationBuilder()
-               .SetBasePath(env.WebRootPath)
-               .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-               .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+               .SetBasePath(env.ContentRootPath)
+               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+               .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables();
 
             if (env.IsDevelopment())
             {
@@ -25,14 +25,11 @@ namespace AspNet.KickStart.ApiHost
             return builder.Build();
         }
 
-        public static IHostingEnvironment ConfigureLogger(this IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public static IHostingEnvironment ConfigureLogger(this IHostingEnvironment env,
+            IConfigurationRoot configurationRoot,
+            ILoggerFactory loggerFactory)
         {
-            var logConfig = new ConfigurationBuilder()
-                .SetBasePath(env.WebRootPath)
-                .AddJsonFile("logsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                .Build();
-            loggerFactory.AddConsole(logConfig);
+            loggerFactory.AddConsole(configurationRoot.GetSection("Logging"));
 
             return env;
         }

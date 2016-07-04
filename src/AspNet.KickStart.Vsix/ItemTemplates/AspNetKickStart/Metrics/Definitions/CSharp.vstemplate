@@ -20,7 +20,7 @@
   </WizardExtension>
   <WizardData>
     <packages repository="extension" repositoryId="AspNet.KickStart.Vsix.F9BA239C-2420-4167-A986-3C11670DB3E0">
-      <package id="Metrics.NET" version="0.3.5" />
+      <package id="Metrics.NET" version="0.3.7" />
     </packages>
   </WizardData>
 </VSTemplate>

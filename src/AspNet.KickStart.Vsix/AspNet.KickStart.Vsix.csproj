@@ -47,8 +47,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\packages\Metrics.NET.0.3.5\Metrics.NET.0.3.5.nupkg">
-      <Link>Packages\Metrics.NET.0.3.5.nupkg</Link>
+    <Content Include="..\..\packages\Metrics.NET.0.3.7\Metrics.NET.0.3.7.nupkg">
+      <Link>Packages\Metrics.NET.0.3.7.nupkg</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -82,8 +82,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Metrics, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Metrics.NET.0.3.5\lib\net45\Metrics.dll</HintPath>
+    <Reference Include="Metrics, Version=0.3.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Metrics.NET.0.3.7\lib\net45\Metrics.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">

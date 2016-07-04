@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
-
-namespace AspNet.KickStart.ApiHost
+﻿// ReSharper disable CheckNamespace
+namespace Microsoft.AspNetCore.Builder
+// ReSharper restore CheckNamespace
 {
     // ReSharper disable MissingXmlDoc
     public static class SecurityExtensions

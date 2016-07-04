@@ -1,4 +1,4 @@
-﻿using System;
+﻿using AspNet.Metrics.Infrastructure;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,25 +18,24 @@ namespace AspNet.KickStart.ApiHost
 
         public IConfigurationRoot Configuration { get; set; }
 
-        public void Configure(IApplicationBuilder app, 
+        public void Configure(IApplicationBuilder app,
             IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            env.ConfigureLogger(loggerFactory);
+            env.ConfigureLogger(Configuration, loggerFactory);
 
             if (env.IsDevelopment())
             {
-                app.ConfigureForDevelopment();
+                app.ConfigureForDevelopment(loggerFactory);
             }
 
             app.ConfigureSecurity();
-            app.AddAuthz();
-            app.UseMvcWithMetrics();
-
-            //app.UseSwaggerGen();
-            //app.UseSwaggerUi();
+            //app.AddAuthz();
+            app.UseMetrics();
+            app.UseMvc();
+            app.UseSwaggerDefaults();
         }
 
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services
                 .AddOptions()
@@ -44,22 +43,17 @@ namespace AspNet.KickStart.ApiHost
                 .AddRouting(options => { options.LowercaseUrls = true; })
                 .AddSwagger();
 
-            services.Configure<AuthSettings>(options => 
+            services.Configure<AuthSettings>(options =>
                 Configuration.GetSection(nameof(AuthSettings)).Bind(options));
 
             services.AddMvcCore()
                 .AddJsonFormatters()
-                .AddAuthorization(options =>
-                {
-                    options.AddPolicy("SamplePolicy", policy =>
-                    {
-                        policy.RequireClaim("scope", "read");
-                    });
-                });
+                .AddAuthorization(options => { options.AddPolicy("SamplePolicy", policy => { policy.RequireClaim("scope", "read"); }); });
 
             services
-                .AddMvc()
+                .AddMvc(options => { options.Filters.Add(new MetricsResourceFilter(new DefaultRouteTemplateResolver())); })
                 .AddDefaultJsonOptions();
+
 
             services
                 .AddMetrics(options =>
@@ -70,7 +64,7 @@ namespace AspNet.KickStart.ApiHost
                 .AddAllPerforrmanceCounters()
                 .AddHealthChecks();
 
-            return services.BuildServiceProvider();
+            services.AddSwagger();
         }
     }
 }
