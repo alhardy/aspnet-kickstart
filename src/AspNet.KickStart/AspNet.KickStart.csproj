@@ -13,8 +13,8 @@
     <ProjectGuid>{0198E032-87E6-4F1A-A772-681894E9B584}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AspNet.KickStart.Vsix</RootNamespace>
-    <AssemblyName>AspNet.KickStart.Vsix</AssemblyName>
+    <RootNamespace>AspNet.KickStart</RootNamespace>
+    <AssemblyName>AspNet.KickStart</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
