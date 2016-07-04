@@ -1,3 +1,7 @@
+version: 1.0.{build}
+branches:
+  only:
+  - dev
 image: Visual Studio 2015
 
 install:
@@ -5,11 +9,10 @@ install:
 
 before_build:
   - ps: Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
-  #- ps: Vsix-TokenReplacement src\AspNet.KickStart.ApiHost\source.extension.cs 'Version = "([0-9\\.]+)"' 'Version = "{version}"'
 
 build_script:
-  - nuget restore -Verbosity quiet
-  - msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
+- nuget restore -Verbosity quiet
+- msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
 
 after_test:
   - ps: Vsix-PushArtifacts | Vsix-PublishToGallery
