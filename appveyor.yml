@@ -2,7 +2,6 @@ version: 1.0.{build}
 branches:
   only:
   - dev
-image: Visual Studio 2015
 
 install:
 - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
@@ -11,7 +10,7 @@ before_build:
   - ps: Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
 
 build_script:
-- nuget restore -Verbosity quiet
+- nuget restore -Verbosity quiet 
 - msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal /v:m
 
 after_test:
