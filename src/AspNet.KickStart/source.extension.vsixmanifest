@@ -8,7 +8,7 @@
     <License>Resources/LICENSE</License>
     <GettingStartedGuide>https://github.com/alhardy/aspnet-kickstart/README.md</GettingStartedGuide>
     <ReleaseNotes>https://github.com/alhardy/aspnet-kickstart/CHANGELOG.md</ReleaseNotes>
-    <Tags>ASP.NET;Template;Api;Swagger;Swashbuckle;Kick Start;MVC;Web Api;Identity Server;Metrics.NET;ASP.NET Metrics;Metrics;NWebSec</Tags>
+    <Tags>template, api template, mvc template, metrics, project template</Tags>
   </Metadata>
   <Installation AllUsers="true">
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
