@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="AspNet.KickStart.Vsix.F9BA239C-2420-4167-A986-3C11670DB3E0" Version="1.0.0" Language="en-US" Publisher="Allan Hardy" />
+    <Identity Id="F9BA239C-2420-4167-A986-3C11670DB3E0" Version="1.0.0" Language="en-US" Publisher="Allan Hardy" />
     <DisplayName>AspNet KickStart</DisplayName>
     <Description xml:space="preserve">An ASP.NET kick starter template. Adding metrics logging, swagger documentation, security etc.....</Description>
     <MoreInfo>https://github.com/alhardy/aspnet-kickstart</MoreInfo>
